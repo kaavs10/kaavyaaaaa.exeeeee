@@ -330,28 +330,29 @@
 </nav>
 <section id="hero">
   <div class="eyebrow">a digital garden</div>
-  <h1>hi, i'm <span class="accent">kaavya</span>.<br>still figuring out what<br>i want to grow next.</h1>
-  <p class="sub">16, curious, creative, and — statistically speaking — probably in the middle of some new project right now. this is where I plant the things I'm building, learning, and listening to.</p>
+  <h1>hi, i'm <span class="accent">kaavya</span>.<br>learning things,making things,<br>becoming things.</h1>
+  <p class="sub">16, curious, creative, and-statistically speaking- probably in the middle of some new project right now. this is where I plant the things I'm building, learning, and listening to.</p>
   <div class="hero-tags">
     <span class="tag">11th grade</span>
     <span class="tag">science + comp sci</span>
     <span class="tag">pianist</span>
-    <span class="tag">HTML · CSS · JS</span>
+    <span class="tag">HTML/CSS/Python/Java</span>
   </div>
 </section>
 
 <section id="about" class="reveal">
   <div class="eyebrow">the greenhouse</div>
   <h2>a little about me</h2>
-  <p>I'm in 11th grade, mostly buried in science and computer science coursework;the kind of subjects where you either love the problem-solving or you don't, and I very much do. Outside of school, my hands are usually either on a keyboard (typing) or a keyboard (playing) — piano has been my favourite hobby for years, and I've performed in more concerts and recitals than I can count.</p>
+  <p>I'm in 11th grade, mostly buried in science and computer science coursework; the kind of subjects where you either love the problem-solving or you don't, and I very much do:) Outside of school, my hands are usually either on a keyboard (typing) or a keyboard (playing)..piano has been my favourite hobby for years, and I've performed in more concerts and recitals than I can count.</p>
   <div class="about-grid">
     <div class="about-card">
       <h3>in the classroom</h3>
-      <p>Focusing on science and computer science this year....building the foundations for whatever I end up making next.</p>
+      <p>Focusing on science and computer science this year....building the foundations for whatever I end up making next.
+      </p>
     </div>
     <div class="about-card">
       <h3>at the piano</h3>
-      <p>My favourite hobby. I've played in numerous concerts and recitals, and it's still where I go to slow down.</p>
+      <p>My favourite hobby. I've played in numerous concerts and recitals, and it's still where I go to slow down. I also do love making cover videos on instagram, which you can check out by clickig on the instagram(poetry) link below!</p>
     </div>
   </div>
 </section>
@@ -367,7 +368,7 @@
         <span class="seed-status">in progress</span>
       </div>
       <div class="seed-more">
-        <p>Going deeper into computer science this year alongside my science coursework; building the skills that'll shape my next few projects.</p>
+        <p>Going deeper into computer science this year alongside my science coursework; building the skills that'll shape my next few projects. Usually i'm taking part in science exhibitions at school and trying to build up a profile for college.</p>
       </div>
     </div>
     <div class="seed-card" tabindex="0">
@@ -376,7 +377,7 @@
         <span class="seed-status">practicing</span>
       </div>
       <div class="seed-more">
-        <p>Always preparing for the next piano performance. Recitals and concerts are a steady rhythm alongside everything else.</p>
+        <p>Always preparing for the next piano performance. Recitals and concerts are a steady rhythm alongside everything else. src="https://youtu.be/u3e_YuoeMUs?si=mKwpdwoJGmjQyjLR" </p>
       </div>
     </div>
     <div class="seed-card" tabindex="0">
@@ -385,7 +386,7 @@
         <span class="seed-status">tbd</span>
       </div>
       <div class="seed-more">
-        <p>I'm probably already thinking about the next thing to build. Check back! This bed rarely stays empty for long.</p>
+        <p>Currently working on a project.It'll be uploaded here when i finish it!</p>
       </div>
     </div>
   </div>
@@ -396,32 +397,38 @@
   <h2>things I've finished (for now)</h2>
   <p>Click a card to see it bloom open.</p>
   <div class="bed-grid">
-    <div class="seed-card" tabindex="0">
-      <div class="seed-top">
-        <h3>currency converter</h3>
-        <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
-      <div class="seed-more">
-        <p>A tool for converting between currencies — built to practice working with real-world data and clean, simple UI.</p>
-      </div>
+   <div class="seed-card" tabindex="0">
+  <div class="seed-top">
+    <h3>currency converter</h3>
+    <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="seed-more">
+    <p>A tool for converting between currencies — built to practice working with real-world data and clean, simple UI.</p>
+    <a href="https://github.com/kaavs10/CURRENCY-CONVERTER-QUIZ-" target="_blank" rel="noopener">view project ↗</a>
+  </div>
+</div>
+    </div>
+   <div class="seed-card" tabindex="0">
+  <div class="seed-top">
+    <h3>boba tea website</h3>
+    <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="seed-more">
+    <p>A website built around a boba tea theme — a fun front-end project to play with layout, colour, and personality on the web.</p>
+    <a href="https://kaavs10.github.io/bobaa-dropss/" target="_blank" rel="noopener">visit site ↗</a>
+  </div>
+</div>
     </div>
     <div class="seed-card" tabindex="0">
-      <div class="seed-top">
-        <h3>boba tea website</h3>
-        <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
-      <div class="seed-more">
-        <p>A website built around a boba tea theme — a fun front-end project to play with layout, colour, and personality on the web.</p>
-      </div>
-    </div>
-    <div class="seed-card" tabindex="0">
-      <div class="seed-top">
-        <h3>piano concerts &amp; recitals</h3>
-        <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
-      <div class="seed-more">
-        <p>Not code — but just as much a body of work. I've performed in numerous piano concerts and recitals over the years.</p>
-      </div>
+  <div class="seed-top">
+    <h3>piano concerts &amp; recitals</h3>
+    <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="seed-more">
+    <p>Not code — but just as much a body of work. I've performed in numerous piano concerts and recitals over the years.</p>
+    <a href="https://youtu.be/u3e_YuoeMUs" target="_blank" rel="noopener">watch a recital ↗</a>
+  </div>
+</div>
     </div>
   </div>
 </section>
@@ -433,6 +440,7 @@
     <div class="root-chip"><span class="dot"></span>HTML</div>
     <div class="root-chip"><span class="dot"></span>CSS</div>
     <div class="root-chip"><span class="dot"></span>JavaScript</div>
+    <div class="root-chip"><span class="dot"></span>Python</div>
     <div class="root-chip"><span class="dot"></span>Computer Science (11th grade)</div>
     <div class="root-chip"><span class="dot"></span>Piano</div>
   </div>
@@ -440,8 +448,8 @@
 
 <section id="playlist" class="reveal">
   <div class="eyebrow">the soundtrack</div>
-  <h2>what's on repeat while I work</h2>
-  <p>Five songs I've had on loop lately — swap in your own Spotify embed links here (see the note below the site for how).</p>
+  <h2>what's on repeat while i'm cooking:</h2>
+  <p>A few songs i've had on loop lately — swap in your own Spotify embed links here (see the note below the site for how).</p>
   <div class="track-grid">
 
     <div class="track-slot">
@@ -486,10 +494,11 @@
   <div class="eyebrow">leave a note in the garden</div>
   <h2>let's talk</h2>
   <p>If you want to see what I'm building next, or just talk pianos, code, or boba — find me here:</p>
-  <div class="contact-links">
-    <a href="https://github.com/kaavs10" target="_blank" rel="noopener">GitHub ↗</a>
-    <a href="https://www.instagram.com/_kaavs_10" target="_blank" rel="noopener">Instagram ↗</a>
-  </div>
+ <div class="contact me!!">
+  <a href="https://github.com/kaavs10" target="_blank" rel="noopener">GitHub ↗</a>
+  <a href="https://www.instagram.com/_kaavs_10" target="_blank" rel="noopener">Instagram (main) ↗</a>
+  <a href="https://www.instagram.com/_kaavsclouds_" target="_blank" rel="noopener">Instagram (poetry) ↗</a>
+</div>
 </section>
 
 <footer>
