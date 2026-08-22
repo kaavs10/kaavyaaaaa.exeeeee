@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>kaavya ramakrishnan — digital garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #FBF1EC;
+    --paper: #FFF9F6;
+    --maroon-deep: #661821;
+    --maroon-mid: #9C3040;
+    --rose-dust: #E9C7C2;
+    --rose-line: #DCAFA9;
+    --ink: #3A1418;
+    --gold-leaf: #AD7C46;
+    --shadow: 0 10px 30px -14px rgba(102,24,33,0.25);
+    --radius: 18px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1,h2,h3, .display{
+    font-family: 'Fraunces', serif;
+    color: var(--maroon-deep);
+    font-weight: 600;
+    margin: 0;
+  }
+  .eyebrow{
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-leaf);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom: 14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px; height:1px;
+    background: var(--gold-leaf);
+    display:inline-block;
+  }
+  a{ color: var(--maroon-mid); }
+  ::selection{ background: var(--rose-dust); color: var(--maroon-deep); }
+  #vine-wrap{
+    position: fixed;
+    left: 0; top: 0;
+    height: 100vh;
+    width: 60px;
+    pointer-events: none;
+    z-index: 5;
+    display: none;
+  }
+  #vine-wrap svg{ height: 100%; width: 100%; }
+  #vine-path{
+    fill: none;
+    stroke: var(--maroon-mid);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    transition: stroke-dashoffset 0.1s linear;
+  }
+  @media (min-width: 900px){
+    #vine-wrap{ display:block; }
+  }
+  nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(251,241,236,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rose-dust);
+  }
+  .nav-inner{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 16px 28px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+  .nav-name{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--maroon-deep);
+    text-decoration:none;
+  }
+  .nav-links{
+    display:flex;
+    gap: 26px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .nav-links a{
+    font-family:'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-decoration:none;
+    color: var(--ink);
+    position: relative;
+    padding-bottom: 3px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1.5px;
+    background: var(--maroon-mid);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-toggle{ display:none; background:none; border:none; font-size:1.4rem; color:var(--maroon-deep); cursor:pointer; }
+  @media (max-width: 680px){
+    .nav-links{
+      position:absolute;
+      top: 100%; right: 0; left: 0;
+      flex-direction:column;
+      background: var(--paper);
+      padding: 18px 28px;
+      gap: 16px;
+      border-bottom: 1px solid var(--rose-dust);
+      display:none;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-toggle{ display:block; }
+  }
+  section{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 90px 28px;
+  }
+  section + section{ border-top: 1px solid var(--rose-dust); }
+  .reveal{
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform: translateY(0); }
+  #hero{
+    padding-top: 120px;
+    padding-bottom: 70px;
+    text-align:left;
+  }
+  #hero h1{
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    line-height: 1.08;
+  }
+  #hero .accent{ font-style: italic; color: var(--maroon-mid); }
+  #hero p.sub{
+    max-width: 520px;
+    color: var(--ink);
+    opacity: 0.85;
+    font-size: 1.08rem;
+    margin-top: 18px;
+  }
+  .hero-tags{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top: 26px;
+  }
+  .tag{
+    font-family:'Space Mono', monospace;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    border: 1px solid var(--rose-line);
+    border-radius: 999px;
+    color: var(--maroon-deep);
+    background: var(--paper);
+  }
+  #about p{ max-width: 620px; }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 34px;
+  }
+  .about-card{
+    background: var(--paper);
+    border: 1px solid var(--rose-dust);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .about-card h3{ font-size: 1rem; margin-bottom: 8px; }
+  .about-card p{ font-size: 0.94rem; margin:0; opacity:0.85; }
+  @media (max-width: 600px){ .about-grid{ grid-template-columns: 1fr; } }
+  .bed-grid{
+    display:grid;
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .seed-card{
+    background: var(--paper);
+    border: 1px solid var(--rose-dust);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .seed-card:hover{ transform: translateY(-3px); border-color: var(--maroon-mid); }
+  .seed-top{
+    display:flex; align-items:center; justify-content:space-between; gap: 16px;
+  }
+  .seed-top h3{ font-size: 1.15rem; }
+  .seed-status{
+    font-family:'Space Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-leaf);
+    white-space: nowrap;
+  }
+  .seed-bloom-icon{
+    width: 22px; height:22px;
+    flex-shrink:0;
+    transition: transform 0.35s ease;
+  }
+  .seed-card.open .seed-bloom-icon{ transform: rotate(135deg); }
+  .seed-more{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin-top 0.4s ease;
+  }
+  .seed-card.open .seed-more{ max-height: 300px; margin-top: 14px; }
+  .seed-more p{ margin:0 0 10px; font-size:0.95rem; opacity:0.88; }
+  .seed-more a{ font-family:'Space Mono', monospace; font-size:0.8rem; }
+  .roots-wrap{
+    display:flex; flex-wrap:wrap; gap: 12px;
+    margin-top: 30px;
+  }
+  .root-chip{
+    display:flex; align-items:center; gap:8px;
+    background: var(--paper);
+    border:1px solid var(--rose-dust);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+  }
+  .root-chip .dot{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--maroon-mid);
+  }
+  .track-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  .track-slot{
+    background: var(--paper);
+    border: 1px solid var(--rose-dust);
+    border-radius: var(--radius);
+    padding: 10px;
+  }
+  .track-slot iframe{ border-radius: 12px; display:block; width:100%; }
+  .track-fallback{
+    padding: 16px 10px;
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--maroon-deep);
+  }
+  @media (max-width: 600px){ .track-grid{ grid-template-columns: 1fr; } }
+
+  .contact-links{
+    display:flex; flex-wrap:wrap; gap: 16px;
+    margin-top: 26px;
+  }
+  .contact-links a{
+    display:inline-flex; align-items:center; gap:10px;
+    background: var(--maroon-deep);
+    color: var(--cream);
+    text-decoration:none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-family:'Space Mono', monospace;
+    font-size: 0.82rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .contact-links a:hover{ background: var(--maroon-mid); transform: translateY(-2px); }
+  footer{
+    text-align:center;
+    padding: 40px 28px 60px;
+    font-family:'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold-leaf);
+  }
+</style>
+</head>
+<body>
+<div id="vine-wrap" aria-hidden="true">
+  <svg viewBox="0 0 60 1000" preserveAspectRatio="none">
+    <path id="vine-path" d="M30,0
+      C10,60 50,120 30,180
+      C10,240 50,300 30,360
+      C10,420 50,480 30,540
+      C10,600 50,660 30,720
+      C10,780 50,840 30,900
+      C10,940 50,970 30,1000" />
+  </svg>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-name">kaavya 🌱</a>
+    <button class="nav-toggle" id="navToggle" aria-label="toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">the greenhouse</a></li>
+      <li><a href="#sprouting">sprouting</a></li>
+      <li><a href="#bloomed">bloomed</a></li>
+      <li><a href="#roots">roots</a></li>
+      <li><a href="#playlist">playlist</a></li>
+      <li><a href="#contact">say hi</a></li>
+    </ul>
+  </div>
+</nav>
+<section id="hero">
+  <div class="eyebrow">a digital garden</div>
+  <h1>hi, i'm <span class="accent">kaavya</span>.<br>learning things,making things,<br>becoming things.</h1>
+  <p class="sub">16, curious, creative, and-statistically speaking- probably in the middle of some new project right now. this is where I plant the things I'm building, learning, and listening to.</p>
+  <div class="hero-tags">
+    <span class="tag">11th grade</span>
+    <span class="tag">science + comp sci</span>
+    <span class="tag">pianist</span>
+    <span class="tag">HTML/CSS/Python/Java</span>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="eyebrow">the greenhouse</div>
+  <h2>a little about me</h2>
+  <p>I'm in 11th grade, mostly buried in science and computer science coursework; the kind of subjects where you either love the problem-solving or you don't, and I very much do:) Outside of school, my hands are usually either on a keyboard (typing) or a keyboard (playing)..piano has been my favourite hobby for years, and I've performed in more concerts and recitals than I can count.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>in the classroom</h3>
+      <p>Focusing on science and computer science this year....building the foundations for whatever I end up making next.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>at the piano</h3>
+      <p>My favourite hobby. I've played in numerous concerts and recitals, and it's still where I go to slow down. I also do love making cover videos on instagram, which you can check out by clickig on the instagram(poetry) link below!</p>
+    </div>
+  </div>
+</section>
+
+<section id="sprouting" class="reveal">
+  <div class="eyebrow">currently sprouting</div>
+  <h2>what's growing right now</h2>
+  <p>Nothing here is ever really finished.......it's more like a garden bed I keep coming back to. Right now, that means:</p>
+  <div class="bed-grid">
+    <div class="seed-card" tabindex="0">
+      <div class="seed-top">
+        <h3>leveling up in comp sci</h3>
+        <span class="seed-status">in progress</span>
+      </div>
+      <div class="seed-more">
+        <p>Going deeper into computer science this year alongside my science coursework; building the skills that'll shape my next few projects. Usually i'm taking part in science exhibitions at school and trying to build up a profile for college.</p>
+      </div>
+    </div>
+    <div class="seed-card" tabindex="0">
+      <div class="seed-top">
+        <h3>the next recital</h3>
+        <span class="seed-status">practicing</span>
+      </div>
+      <div class="seed-more">
+        <p>Always preparing for the next piano performance. Recitals and concerts are a steady rhythm alongside everything else.</p>
+      </div>
+    </div>
+    <div class="seed-card" tabindex="0">
+      <div class="seed-top">
+        <h3>my next project</h3>
+        <span class="seed-status">tbd</span>
+      </div>
+      <div class="seed-more">
+        <p>Currently working on a project.It'll be uploaded here when i finish it!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bloomed" class="reveal">
+  <div class="eyebrow">fully bloomed</div>
+  <h2>things I've finished (for now)</h2>
+  <p>Click a card to see it bloom open.</p>
+  <div class="bed-grid">
+   <div class="seed-card" tabindex="0">
+  <div class="seed-top">
+    <h3>currency converter</h3>
+    <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="seed-more">
+    <p>A tool for converting between currencies — built to practice working with real-world data and clean, simple UI.</p>
+    <a href="https://github.com/kaavs10/CURRENCY-CONVERTER-QUIZ-" target="_blank" rel="noopener">view project ↗</a>
+  </div>
+</div>
+    </div>
+   <div class="seed-card" tabindex="0">
+  <div class="seed-top">
+    <h3>boba tea website</h3>
+    <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="seed-more">
+    <p>A website built around a boba tea theme — a fun front-end project to play with layout, colour, and personality on the web.</p>
+    <a href="https://kaavs10.github.io/bobaa-dropss/" target="_blank" rel="noopener">visit site ↗</a>
+  </div>
+</div>
+    </div>
+    <div class="seed-card" tabindex="0">
+  <div class="seed-top">
+    <h3>piano concerts &amp; recitals</h3>
+    <svg class="seed-bloom-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#9C3040" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="seed-more">
+    <p>Not code — but just as much a body of work. I've performed in numerous piano concerts and recitals over the years.</p>
+    <a href="https://youtu.be/u3e_YuoeMUs" target="_blank" rel="noopener">watch a recital ↗</a>
+  </div>
+</div>
+</section>
+
+<section id="roots" class="reveal">
+  <div class="eyebrow">roots &amp; tools</div>
+  <h2>what I build with</h2>
+  <div class="roots-wrap">
+    <div class="root-chip"><span class="dot"></span>HTML</div>
+    <div class="root-chip"><span class="dot"></span>CSS</div>
+    <div class="root-chip"><span class="dot"></span>JavaScript</div>
+    <div class="root-chip"><span class="dot"></span>Python</div>
+    <div class="root-chip"><span class="dot"></span>Computer Science (11th grade)</div>
+    <div class="root-chip"><span class="dot"></span>Piano</div>
+  </div>
+</section>
+
+<section id="playlist" class="reveal">
+  <div class="eyebrow">the soundtrack</div>
+  <h2>what's on repeat while i'm cooking:</h2>
+  <p>A few songs i've had on loop lately:</p>
+  <div class="track-grid">
+
+  <div class="track-slot">
+    <iframe title="my way - Olivia Rodrigo" src="https://open.spotify.com/embed/track/4Ilw2lD6z4WBqh65vUUZUf?si=9fcdf7d8233e43b0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">my way — Olivia Rodrigo</div>
+  </div>
+  <div class="track-slot">
+    <iframe title="Lucid Dreams - Juice WRLD" src="https://open.spotify.com/embed/track/285pBltuF7vW8TeWk8hdRR?si=a6bf13540d6a443d" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">Lucid Dreams — Juice WRLD</div>
+  </div>
+  <div class="track-slot">
+    <iframe title="The Way I Loved You - Taylor Swift" src="https://open.spotify.com/embed/track/22bPsP2jCgbLUvh82U0Z3M?si=e75fe50e738d4320" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">The Way I Loved You - Taylor Swift</div>
+  </div>
+  <div class="track-slot">
+    <iframe title="Nobody's Son - Sabrina Carpenter" src="https://open.spotify.com/embed/track/4SRShYMtFIGgnOU7iBicMH?si=c2b4922a9dda444d" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">Nobody's Son - Sabrina Carpenter</div>
+  </div>
+  <div class="track-slot" style="grid-column: 1 / -1;">
+    <iframe title="Falling - Chase Atlantic" src="https://open.spotify.com/embed/track/7kJJcoJmbN0CnsYoT9VDyB?si=e7f4601878644332" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">Falling - Chase Atlantic</div>
+  </div>
+  <div class="track-slot" style="grid-column: 1 / -1;">
+    <iframe title="Sweater Weather - The Neighbourhood" src="https://open.spotify.com/embed/track/2QjOHCTQ1Jl3zawyYOpxh6?si=aeeb0d79c67e474b" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">Sweater Weather - The Neighbourhood</div>
+  </div>
+  <div class="track-slot" style="grid-column: 1 / -1;">
+    <iframe title="Moth To A Flame - Swedish House Mafia,The Weeknd" src="https://open.spotify.com/embed/track/0VO8gYVDSwM1Qdd2GsMoYK?si=6755bce99e264500" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="track-fallback">Moth To A Flame - Swedish House Mafia,The Weeknd</div>
+  </div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="eyebrow">leave a note in the garden</div>
+  <h2>let's talk</h2>
+  <p>If you want to see what I'm building next, or just talk pianos, code, or boba — find me here:</p>
+ <div class="contact-links">
+  <a href="https://github.com/kaavs10" target="_blank" rel="noopener">GitHub ↗</a>
+  <a href="https://www.instagram.com/_kaavs_10" target="_blank" rel="noopener">Instagram (main) ↗</a>
+  <a href="https://www.instagram.com/_kaavsclouds_" target="_blank" rel="noopener">Instagram (poetry) ↗</a>
+</div>
+</section>
+
+<footer>
+  planted &amp; grown by kaavya ramakrishnan
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+  document.querySelectorAll('.seed-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('open'));
+    card.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); card.classList.toggle('open'); }
+    });
+  });
+
+  const vinePath = document.getElementById('vine-path');
+  const vineLength = vinePath.getTotalLength();
+  vinePath.style.strokeDasharray = vineLength;
+  vinePath.style.strokeDashoffset = vineLength;
+
+  function updateVine(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min(scrollTop / docHeight, 1);
+    vinePath.style.strokeDashoffset = vineLength - (vineLength * progress);
+  }
+  window.addEventListener('scroll', updateVine);
+  updateVine();
+</script>
+
+</body>
+</html>
