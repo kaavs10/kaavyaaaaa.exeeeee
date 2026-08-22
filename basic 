@@ -20,10 +20,8 @@
     --shadow: 0 10px 30px -14px rgba(102,24,33,0.25);
     --radius: 18px;
   }
-
   *{ box-sizing: border-box; }
   html{ scroll-behavior: smooth; }
-
   body{
     margin:0;
     background: var(--cream);
@@ -33,14 +31,12 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
   h1,h2,h3, .display{
     font-family: 'Fraunces', serif;
     color: var(--maroon-deep);
     font-weight: 600;
     margin: 0;
   }
-
   .eyebrow{
     font-family: 'Space Mono', monospace;
     font-size: 0.72rem;
@@ -58,12 +54,8 @@
     background: var(--gold-leaf);
     display:inline-block;
   }
-
   a{ color: var(--maroon-mid); }
-
   ::selection{ background: var(--rose-dust); color: var(--maroon-deep); }
-
-  /* ---------- growth vine (signature element) ---------- */
   #vine-wrap{
     position: fixed;
     left: 0; top: 0;
@@ -86,8 +78,6 @@
   @media (min-width: 900px){
     #vine-wrap{ display:block; }
   }
-
-  /* ---------- nav ---------- */
   nav{
     position: sticky;
     top: 0;
@@ -136,7 +126,6 @@
   }
   .nav-links a:hover::after{ width:100%; }
   .nav-toggle{ display:none; background:none; border:none; font-size:1.4rem; color:var(--maroon-deep); cursor:pointer; }
-
   @media (max-width: 680px){
     .nav-links{
       position:absolute;
@@ -151,22 +140,18 @@
     .nav-links.open{ display:flex; }
     .nav-toggle{ display:block; }
   }
-
   section{
     max-width: 780px;
     margin: 0 auto;
     padding: 90px 28px;
   }
   section + section{ border-top: 1px solid var(--rose-dust); }
-
   .reveal{
     opacity: 0;
     transform: translateY(26px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .reveal.in{ opacity:1; transform: translateY(0); }
-
-  /* ---------- hero ---------- */
   #hero{
     padding-top: 120px;
     padding-bottom: 70px;
@@ -197,8 +182,6 @@
     color: var(--maroon-deep);
     background: var(--paper);
   }
-
-  /* ---------- about ---------- */
   #about p{ max-width: 620px; }
   .about-grid{
     display:grid;
@@ -215,8 +198,6 @@
   .about-card h3{ font-size: 1rem; margin-bottom: 8px; }
   .about-card p{ font-size: 0.94rem; margin:0; opacity:0.85; }
   @media (max-width: 600px){ .about-grid{ grid-template-columns: 1fr; } }
-
-  /* ---------- seed cards (projects) ---------- */
   .bed-grid{
     display:grid;
     gap: 18px;
@@ -258,8 +239,6 @@
   .seed-card.open .seed-more{ max-height: 300px; margin-top: 14px; }
   .seed-more p{ margin:0 0 10px; font-size:0.95rem; opacity:0.88; }
   .seed-more a{ font-family:'Space Mono', monospace; font-size:0.8rem; }
-
-  /* ---------- roots / skills ---------- */
   .roots-wrap{
     display:flex; flex-wrap:wrap; gap: 12px;
     margin-top: 30px;
@@ -276,8 +255,6 @@
     width:7px; height:7px; border-radius:50%;
     background: var(--maroon-mid);
   }
-
-  /* ---------- soundtrack ---------- */
   .track-grid{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -300,7 +277,6 @@
   }
   @media (max-width: 600px){ .track-grid{ grid-template-columns: 1fr; } }
 
-  /* ---------- contact ---------- */
   .contact-links{
     display:flex; flex-wrap:wrap; gap: 16px;
     margin-top: 26px;
@@ -317,7 +293,6 @@
     transition: background 0.25s ease, transform 0.25s ease;
   }
   .contact-links a:hover{ background: var(--maroon-mid); transform: translateY(-2px); }
-
   footer{
     text-align:center;
     padding: 40px 28px 60px;
@@ -328,7 +303,6 @@
 </style>
 </head>
 <body>
-
 <div id="vine-wrap" aria-hidden="true">
   <svg viewBox="0 0 60 1000" preserveAspectRatio="none">
     <path id="vine-path" d="M30,0
@@ -340,7 +314,6 @@
       C10,940 50,970 30,1000" />
   </svg>
 </div>
-
 <nav>
   <div class="nav-inner">
     <a href="#hero" class="nav-name">kaavya 🌱</a>
@@ -355,7 +328,6 @@
     </ul>
   </div>
 </nav>
-
 <section id="hero">
   <div class="eyebrow">a digital garden</div>
   <h1>hi, i'm <span class="accent">kaavya</span>.<br>still figuring out what<br>i want to grow next.</h1>
@@ -371,11 +343,11 @@
 <section id="about" class="reveal">
   <div class="eyebrow">the greenhouse</div>
   <h2>a little about me</h2>
-  <p>I'm in 11th grade, mostly buried in science and computer science coursework — the kind of subjects where you either love the problem-solving or you don't, and I very much do. Outside of school, my hands are usually either on a keyboard (typing) or a keyboard (playing) — piano has been my favourite hobby for years, and I've performed in more concerts and recitals than I can count.</p>
+  <p>I'm in 11th grade, mostly buried in science and computer science coursework;the kind of subjects where you either love the problem-solving or you don't, and I very much do. Outside of school, my hands are usually either on a keyboard (typing) or a keyboard (playing) — piano has been my favourite hobby for years, and I've performed in more concerts and recitals than I can count.</p>
   <div class="about-grid">
     <div class="about-card">
       <h3>in the classroom</h3>
-      <p>Focusing on science and computer science this year — building the foundations for whatever I end up making next.</p>
+      <p>Focusing on science and computer science this year....building the foundations for whatever I end up making next.</p>
     </div>
     <div class="about-card">
       <h3>at the piano</h3>
@@ -387,7 +359,7 @@
 <section id="sprouting" class="reveal">
   <div class="eyebrow">currently sprouting</div>
   <h2>what's growing right now</h2>
-  <p>Nothing here is ever really finished — it's more like a garden bed I keep coming back to. Right now, that means:</p>
+  <p>Nothing here is ever really finished.......it's more like a garden bed I keep coming back to. Right now, that means:</p>
   <div class="bed-grid">
     <div class="seed-card" tabindex="0">
       <div class="seed-top">
@@ -395,7 +367,7 @@
         <span class="seed-status">in progress</span>
       </div>
       <div class="seed-more">
-        <p>Going deeper into computer science this year alongside my science coursework — building the skills that'll shape my next few projects.</p>
+        <p>Going deeper into computer science this year alongside my science coursework; building the skills that'll shape my next few projects.</p>
       </div>
     </div>
     <div class="seed-card" tabindex="0">
@@ -404,7 +376,7 @@
         <span class="seed-status">practicing</span>
       </div>
       <div class="seed-more">
-        <p>Always preparing for the next piano performance — recitals and concerts are a steady rhythm alongside everything else.</p>
+        <p>Always preparing for the next piano performance. Recitals and concerts are a steady rhythm alongside everything else.</p>
       </div>
     </div>
     <div class="seed-card" tabindex="0">
@@ -413,7 +385,7 @@
         <span class="seed-status">tbd</span>
       </div>
       <div class="seed-more">
-        <p>I'm probably already thinking about the next thing to build. Check back — this bed rarely stays empty for long.</p>
+        <p>I'm probably already thinking about the next thing to build. Check back! This bed rarely stays empty for long.</p>
       </div>
     </div>
   </div>
@@ -473,33 +445,38 @@
   <div class="track-grid">
 
     <div class="track-slot">
-      <!-- REPLACE the src below with your "my way" — Olivia Rodrigo embed link -->
-      <iframe title="my way — Olivia Rodrigo" src="https://open.spotify.com/embed/track/REPLACE_WITH_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe title="my way - Olivia Rodrigo" src="https://open.spotify.com/track/4Ilw2lD6z4WBqh65vUUZUf?si=9fcdf7d8233e43b0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <div class="track-fallback">my way — Olivia Rodrigo</div>
     </div>
 
     <div class="track-slot">
-      <!-- REPLACE the src below with your "Lucid Dreams" — Juice WRLD embed link -->
-      <iframe title="Lucid Dreams — Juice WRLD" src="https://open.spotify.com/embed/track/REPLACE_WITH_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe title="Lucid Dreams - Juice WRLD" src="https://open.spotify.com/track/285pBltuF7vW8TeWk8hdRR?si=a6bf13540d6a443d" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <div class="track-fallback">Lucid Dreams — Juice WRLD</div>
     </div>
 
     <div class="track-slot">
-      <!-- REPLACE the src below with your "The Way I Loved You" — Taylor Swift embed link -->
-      <iframe title="The Way I Loved You — Taylor Swift" src="https://open.spotify.com/embed/track/REPLACE_WITH_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <div class="track-fallback">The Way I Loved You — Taylor Swift</div>
+      <iframe title="The Way I Loved You - Taylor Swift" src="https://open.spotify.com/track/22bPsP2jCgbLUvh82U0Z3M?si=e75fe50e738d4320" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="track-fallback">The Way I Loved You - Taylor Swift</div>
     </div>
 
     <div class="track-slot">
-      <!-- REPLACE the src below with your "Nobody's Son" — Sabrina Carpenter embed link -->
-      <iframe title="Nobody's Son — Sabrina Carpenter" src="https://open.spotify.com/embed/track/REPLACE_WITH_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <div class="track-fallback">Nobody's Son — Sabrina Carpenter</div>
+      <iframe title="Nobody's Son - Sabrina Carpenter" src="https://open.spotify.com/track/4SRShYMtFIGgnOU7iBicMH?si=c2b4922a9dda444d" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="track-fallback">Nobody's Son - Sabrina Carpenter</div>
     </div>
 
     <div class="track-slot" style="grid-column: 1 / -1;">
-      <!-- REPLACE the src below with your "Falling" — Chase Atlantic embed link -->
-      <iframe title="Falling — Chase Atlantic" src="https://open.spotify.com/embed/track/REPLACE_WITH_TRACK_ID" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <div class="track-fallback">Falling — Chase Atlantic</div>
+      <iframe title="Falling - Chase Atlantic" src="https://open.spotify.com/track/7kJJcoJmbN0CnsYoT9VDyB?si=e7f4601878644332" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="track-fallback">Falling - Chase Atlantic</div>
+    </div>
+
+     <div class="track-slot" style="grid-column: 1 / -1;">
+      <iframe title="Sweater Weather - The Neighbourhood" src="https://open.spotify.com/track/2QjOHCTQ1Jl3zawyYOpxh6?si=aeeb0d79c67e474b" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="track-fallback">Sweater Weather - The Neighbourhood</div>
+    </div>
+
+    <div class="track-slot" style="grid-column: 1 / -1;">
+      <iframe title="Moth To A Flame - Swedish House Mafia,The Weeknd" src="https://open.spotify.com/track/0VO8gYVDSwM1Qdd2GsMoYK?si=6755bce99e264500" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="track-fallback">Moth To A Flame - Swedish House Mafia,The Weeknd</div>
     </div>
 
   </div>
@@ -537,8 +514,6 @@
     });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
-
-  // seed cards bloom open on click
   document.querySelectorAll('.seed-card').forEach(card => {
     card.addEventListener('click', () => card.classList.toggle('open'));
     card.addEventListener('keypress', (e) => {
@@ -546,7 +521,6 @@
     });
   });
 
-  // growth vine tied to scroll progress
   const vinePath = document.getElementById('vine-path');
   const vineLength = vinePath.getTotalLength();
   vinePath.style.strokeDasharray = vineLength;
