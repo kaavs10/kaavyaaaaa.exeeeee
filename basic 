@@ -324,6 +324,7 @@
       <li><a href="#bloomed">bloomed</a></li>
       <li><a href="#roots">roots</a></li>
       <li><a href="#playlist">playlist</a></li>
+      <li><a href="#sitcoms">shows</a></li>
       <li><a href="#contact">say hi</a></li>
     </ul>
   </div>
@@ -479,15 +480,30 @@
   </div>
 </div>
 </section>
-
+<section id="sitcoms" class="reveal">
+  <div class="eyebrow">comfort shows</div>
+  <h2>sitcoms i keep rewatching</h2>
+  <p>The background noise to pretty much everything I do lol----- these are on PERMANENTT rotation.</p>
+  <div class="roots-wrap">
+    <div class="root-chip"><span class="dot"></span>Friends</div>
+    <div class="root-chip"><span class="dot"></span>How I Met Your Mother</div>
+    <div class="root-chip"><span class="dot"></span>The Big Bang Theory</div>
+    <div class="root-chip"><span class="dot"></span>Brooklyn Nine-Nine</div>
+    <div class="root-chip"><span class="dot"></span>2 Broke Girls</div>
+    <div class="root-chip"><span class="dot"></span>Never Have I Ever</div>
+    <div class="root-chip"><span class="dot"></span>The Summer I Turned Pretty</div>
+  </div>
+</section>
 <section id="contact" class="reveal">
   <div class="eyebrow">leave a note in the garden</div>
   <h2>let's talk</h2>
   <p>If you want to see what I'm building next, or just talk pianos, code, or boba — find me here:</p>
- <div class="contact-links">
+<div class="contact-links">
   <a href="https://github.com/kaavs10" target="_blank" rel="noopener">GitHub ↗</a>
   <a href="https://www.instagram.com/_kaavs_10" target="_blank" rel="noopener">Instagram (main) ↗</a>
   <a href="https://www.instagram.com/_kaavsclouds_" target="_blank" rel="noopener">Instagram (poetry) ↗</a>
+  <a href="mailto:kaavyaramakrishnan001@gmail.com">Gmail ↗</a>
+  <a href="https://hackclub.enterprise.slack.com/team/U0BPKE1SX0U" target="_blank" rel="noopener">Slack ↗</a>
 </div>
 </section>
 
