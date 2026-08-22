@@ -429,8 +429,6 @@
     <a href="https://youtu.be/u3e_YuoeMUs" target="_blank" rel="noopener">watch a recital ↗</a>
   </div>
 </div>
-    </div>
-  </div>
 </section>
 
 <section id="roots" class="reveal">
@@ -494,7 +492,7 @@
   <div class="eyebrow">leave a note in the garden</div>
   <h2>let's talk</h2>
   <p>If you want to see what I'm building next, or just talk pianos, code, or boba — find me here:</p>
- <div class="contact me!!">
+ <div class="contact-links">
   <a href="https://github.com/kaavs10" target="_blank" rel="noopener">GitHub ↗</a>
   <a href="https://www.instagram.com/_kaavs_10" target="_blank" rel="noopener">Instagram (main) ↗</a>
   <a href="https://www.instagram.com/_kaavsclouds_" target="_blank" rel="noopener">Instagram (poetry) ↗</a>
